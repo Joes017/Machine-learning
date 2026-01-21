@@ -1,3 +1,4 @@
+from sklearn.metrics import mean_squared_error, r2_score
 import matplotlib.pyplot as plt
 
 from sklearn.datasets import fetch_california_housing
@@ -13,7 +14,6 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 print("First 5 predictions:", y_pred[:5])
 print("First 5 actual values:", y_test[:5])
-from sklearn.metrics import mean_squared_error, r2_score
 
 mse = mean_squared_error(y_test, y_pred)
 r2 = r2_score(y_test, y_pred)
@@ -22,7 +22,6 @@ print("Mean Squared Error:", mse)
 print("R² Score:", r2)
 
 # Plot Actual vs Predicted
-import matplotlib.pyplot as plt
 
 plt.figure()
 plt.scatter(y_test, y_pred)
